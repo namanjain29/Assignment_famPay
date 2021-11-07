@@ -1,0 +1,26 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  padding: 10px;
+  min-width: 100%;
+}
+
+.hC1CardContainer::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.hC1CardContainer {
+  display: flex;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#imgBx img{
+  max-height: 50px;
+  width: 50px;
+}
+
+#imgBx{
+  margin: auto;
+}

@@ -10,7 +10,7 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
-import GetText from "../modifiedText";
+import GetText from "../../modifiedText";
 
 const Hc3 = ({template}) => {
   return (

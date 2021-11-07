@@ -1,0 +1,25 @@
+.hc5Card {
+  display: block;
+  padding: 10px;
+  min-width: 100%;
+}
+
+.hC5CardContainer::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.hC5CardContainer {
+  display: flex;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#imgBx img{
+  max-height: 100px;
+  min-width: 100%;
+}
+
+#imgBx{
+  margin: auto;
+}
