@@ -10,7 +10,7 @@ const Hc6 = ({ template }) => {
     <>
       <Grid item xs={12}>
         <div
-          className="cardScroll"
+          className="cardScroll hc6CardContainer"
           style={{ overflow: template.is_scrollable ? "auto" : "hidden"}}
         >
           {template.cards.length
@@ -18,7 +18,7 @@ const Hc6 = ({ template }) => {
                 return (
                   <div
                     key={key}
-                    className="hc6CardContainer"
+                    className="hc6Card"
                     onClick={() => routeChange(Card.url)}
                   >
                     <div id="hc6ImgBx">

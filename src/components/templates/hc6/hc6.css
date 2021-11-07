@@ -1,11 +1,15 @@
-
 .hc6CardContainer {
+  padding: 10px;
+}
+.hc6Card {
   display: grid;
   grid-template-columns: 20% 80%;
   padding: 10px;
   min-width: 95%;
   max-height: 80px;
   border-radius: 15px;
+  background-color: #fbaf03;
+  border-radius: 10px;
 }
 
 #hc6ImgBx img {
