@@ -1,42 +1,36 @@
-import {
-    Container,
-    Grid,
-    Box,
-    Card,
-    CardActionArea,
-    CardMedia,
-    Typography,
-    CardContent,
-    CardActions,
-    Button,
-  } from "@mui/material";
-  import GetText from "../../modifiedText";
-  import "./hc9.css";
-  
-  const Hc9 = ({ template }) => {
-    return (
-      <>
-        <Grid item xs={12}>
-          <div
-            className="hC9CardContainer"
-            style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
-          >
-            {template.cards.length
-              ? template.cards.map((Card) => {
-                  return (
-                    <div className="hc9Card">
-                      <div id="imgBx">
-                        <img src={Card.bg_image.image_url}></img>
-                      </div>
+import { Grid } from "@mui/material";
+import GetText from "../../modifiedText";
+import "./hc9.css";
+import "../../../global.css";
+import routeChange from "../../../utils/routeChange";
+
+
+const Hc9 = ({ template }) => {
+  return (
+    <>
+      <Grid item xs={12}>
+        <div
+          className="cardScroll hc9Container"
+          style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
+        >
+          {template.cards.length
+            ? template.cards.map((Card) => {
+                return (
+                  <div
+                    className="hc9Card"
+                    onClick={() => routeChange(Card.url)}
+                  >
+                    <div id="hc9ImgBx">
+                      <img src={Card.bg_image.image_url}></img>
                     </div>
-                  );
-                })
-              : null}
-          </div>
-        </Grid>
-      </>
-    );
-  };
-  
-  export default Hc9;
-  
+                  </div>
+                );
+              })
+            : null}
+        </div>
+      </Grid>
+    </>
+  );
+};
+
+export default Hc9;

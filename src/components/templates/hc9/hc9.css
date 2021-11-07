@@ -1,25 +1,18 @@
+.hc9Container {
+  padding: 10px;
+}
+
 .hc9Card {
-    display: block;
-    /* padding: 10px; */
-    min-width: 50%;
-  }
-  
-  .hC9CardContainer::-webkit-scrollbar {
-    width: 0;
-    display: none;
-  }
-  
-  .hC9CardContainer {
-    display: flex;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  #imgBx img{
-    max-height: 200px;
-    /* min-width: 100%; */
-  }
-  
-  #imgBx{
-    margin: auto;
-  }
+  display: block;
+  padding: 5px;
+  min-width: 50%;
+  border-radius: 15px;
+}
+
+#hc9ImgBx img {
+  max-height: 200px;
+}
+
+#hc9ImgBx {
+  margin: auto;
+}

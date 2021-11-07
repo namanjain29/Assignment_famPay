@@ -1,26 +1,22 @@
-.cardContainer {
+.hc1Container {
+  padding: 10px;
+}
+
+.hc1CardContainer {
   display: grid;
   grid-template-columns: 20% 80%;
   padding: 10px;
-  min-width: 100%;
+  min-width: 95%;
+  border-radius: 15px;
+  max-height: 80px;
+
 }
 
-.hC1CardContainer::-webkit-scrollbar {
-  width: 0;
-  display: none;
-}
-
-.hC1CardContainer {
-  display: flex;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-#imgBx img{
+#hc1Icon img{
   max-height: 50px;
   width: 50px;
 }
 
-#imgBx{
+#hc1Icon{
   margin: auto;
 }

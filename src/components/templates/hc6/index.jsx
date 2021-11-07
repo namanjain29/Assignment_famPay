@@ -1,43 +1,39 @@
-import {
-  Container,
-  Grid,
-  Box,
-  Card,
-  CardActionArea,
-  CardMedia,
-  Typography,
-  CardContent,
-  CardActions,
-  Button,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 import GetText from "../../modifiedText";
 import "./hc6.css";
+import "../../../global.css";
+import routeChange from "../../../utils/routeChange";
+import {titleStyles, descStyles} from "../../../utils/textStyles";
 
 const Hc6 = ({ template }) => {
   return (
     <>
       <Grid item xs={12}>
         <div
-          className="hC6CardContainer"
-          style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
+          className="cardScroll"
+          style={{ overflow: template.is_scrollable ? "auto" : "hidden"}}
         >
           {template.cards.length
-            ? template.cards.map((Card) => {
+            ? template.cards.map((Card, key) => {
                 return (
-                  <div className="cardContainer">
-                    <div id="imgBx">
+                  <div
+                    key={key}
+                    className="hc6CardContainer"
+                    onClick={() => routeChange(Card.url)}
+                  >
+                    <div id="hc6ImgBx">
                       <img src={Card.icon.image_url}></img>
                     </div>
                     <div>
                       <GetText
                         normalText={Card.title}
                         formattedText={Card.formatted_title}
-                        styles={{}}
+                        styles={titleStyles}
                       />
                       <GetText
                         normalText={Card.description}
                         formattedText={Card.formatted_description}
-                        styles={{}}
+                        styles={descStyles}
                       />
                     </div>
                   </div>
@@ -51,3 +47,5 @@ const Hc6 = ({ template }) => {
 };
 
 export default Hc6;
+
+

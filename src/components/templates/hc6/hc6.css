@@ -1,27 +1,18 @@
 
-.cardContainer {
+.hc6CardContainer {
   display: grid;
   grid-template-columns: 20% 80%;
   padding: 10px;
-  min-width: 100%;
+  min-width: 95%;
+  max-height: 80px;
+  border-radius: 15px;
 }
 
-.hC6CardContainer::-webkit-scrollbar {
-  width: 0;
-  display: none;
-}
-
-.hC6CardContainer {
-  display: flex;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-#imgBx img{
+#hc6ImgBx img {
   max-height: 50px;
   width: 50px;
 }
 
-#imgBx{
+#hc6ImgBx {
   margin: auto;
 }
