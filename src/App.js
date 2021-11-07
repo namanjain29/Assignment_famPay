@@ -3,6 +3,7 @@ import "./App.css";
 import { getAllCards } from "./services/cardsService";
 import { useEffect, useState } from "react";
 import { Container, Grid, Box } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import Hc3 from "./components/templates/hc3";
 import Hc6 from "./components/templates/hc6";
 import Hc1 from "./components/templates/hc1";
@@ -33,6 +34,9 @@ function App() {
   const getData = async () => {
     const data = await getAllCards();
     typeof data == "object" ? setTemplates(data) : setError(data);
+    if (typeof data != "object") {
+      alert(data);
+    }
   };
 
   useEffect(() => {
@@ -40,17 +44,23 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <Container>
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            {templates.length > 0
-              ? templates.map((template) => getTemplateCard(template))
-              : null}
-          </Grid>
-        </Box>
-      </Container>
-    </div>
+    <>
+      {templates.length > 0 ? (
+        <div className="container">
+          <Container>
+            <Box sx={{ flexGrow: 1 }}>
+              <Grid container spacing={2}>
+                {templates.map((template) => getTemplateCard(template))}
+              </Grid>
+            </Box>
+          </Container>
+        </div>
+      ) : (
+        <div style={{ display: error ? "none" : "block" }} className="loader">
+          <CircularProgress />
+        </div>
+      )}
+    </>
   );
 }
 

@@ -1,14 +1,17 @@
 .hc3Container {
   /* padding: 10px; */
+  border-radius: 15px;
 }
 
 .hc3Card {
   min-width: 95%;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .hc3Card .css-bhp9pd-MuiPaper-root-MuiCard-root {
   padding: 10px;
+  border-radius: 15px;
 }
 
 #hc3ImgBx img {
