@@ -4,7 +4,6 @@ import "./hc9.css";
 import "../../../global.css";
 import routeChange from "../../../utils/routeChange";
 
-
 const Hc9 = ({ template }) => {
   return (
     <>
@@ -14,9 +13,10 @@ const Hc9 = ({ template }) => {
           style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
         >
           {template.cards.length
-            ? template.cards.map((Card) => {
+            ? template.cards.map((Card, key) => {
                 return (
                   <div
+                    key={key}
                     className="hc9Card"
                     onClick={() => routeChange(Card.url)}
                   >

@@ -12,9 +12,10 @@ const Hc5 = ({ template }) => {
           style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
         >
           {template.cards.length
-            ? template.cards.map((Card) => {
+            ? template.cards.map((Card, key) => {
                 return (
                   <div
+                    key={key}
                     className="hc5Card"
                     onClick={() => routeChange(Card.url)}
                   >
