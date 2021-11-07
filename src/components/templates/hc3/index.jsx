@@ -13,10 +13,15 @@ import "./hc3.css";
 import alertIcon from "../../../assets/bell.png";
 import cancelIcon from "../../../assets/cancel.png";
 import React, { useState } from "react";
+import { useEffect } from "react";
+import Hc3Card from "./hc3Card";
 
 const Hc3 = ({ template }) => {
   const [cardSize, setCardSize] = useState(12);
-  // const [displayCard, setDisplayCard] = useState([]*template.length)
+  const [displayCardArray, setDisplayCardArray] = useState(
+    Array(template.cards.length).fill("block")
+  );
+
   return (
     <>
       <Grid item xs={12}>
@@ -24,73 +29,10 @@ const Hc3 = ({ template }) => {
           className="hc3Container cardScroll"
           style={{ overflow: template.is_scrollable ? "auto" : "hidden" }}
         >
+          {console.log(displayCardArray)}
           {template.cards.length > 0
             ? template.cards.map((Card, key) => {
-                return (
-                  <Grid key={key} container spacing={1}>
-                    <Grid
-                      item
-                      xs={4}
-                      sx={{ display: cardSize == 12 ? "none" : "block" }}
-                    >
-                      <div className="iconBox">
-                        <div className="iconContainer">
-                          <div
-                            onClick={() => setCardSize(12)}
-                            className="actionIcon"
-                          >
-                            <img src={alertIcon} />
-                            <h5>Remind Later</h5>
-                          </div>
-                          <div
-                            onClick={() => setCardSize(12)}
-                            className="actionIcon"
-                          >
-                            <img src={cancelIcon} />
-                            <h5>Dismiss Now</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </Grid>
-                    <Grid item xs={cardSize}>
-                      <div
-                        className="hc3Card"
-                        onClick={() => setCardSize(8)}
-                        style={{
-                          backgroundColor: Card.bg_color,
-                        }}
-                      >
-                        <CardActionArea>
-                          <div id="hc3ImgBx">
-                            <img src={Card.bg_image.image_url} />
-                          </div>
-                          <CardContent>
-                            <GetText
-                              normalText={Card.title}
-                              formattedText={Card.formatted_title}
-                              styles={titleStyle}
-                            />
-                            <GetText
-                              normalText={Card.description}
-                              formattedText={
-                                Card.formatted_description
-                              }
-                              styles={descStyle}
-                            />
-                          </CardContent>
-                        </CardActionArea>
-                        <div className="buttonBox">
-                          <Button
-                            onClick={() => routeChange(Card.url)}
-                            variant="contained"
-                          >
-                            Action
-                          </Button>
-                        </div>
-                      </div>
-                    </Grid>
-                  </Grid>
-                );
+                return <Hc3Card key={key} Card={Card} />;
               })
             : null}
         </div>
